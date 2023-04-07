@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'JDK_17' }
+    agent { label 'JDK_17_UBUNTU' }
     triggers { pollSCM ( '* * * * *')}
     parameters {
         choice (name: 'MAVEN_GOAL', choices: ['package', 'install', 'clean'], description: 'Maven Goal')

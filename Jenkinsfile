@@ -19,5 +19,12 @@ pipeline {
                 sh "mvn ${params.MAVEN_GOAL}"
                 }
         }
+        stage('post build') {
+            steps {
+                archiveArtifacts artifacts: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar',
+                                 onlyIfSuccessful: true
+                junit testResults: '**/surefire-reports/TEST-*.xml'
+            }			
+        }	
     }
 }

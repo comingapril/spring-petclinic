@@ -11,7 +11,7 @@ pipeline {
                     branch: 'main'
             }
         }
-        stage('package') {
+        stage('mvn package') {
             tools {
                 jdk 'JDK_17_UBUNTU'
             }

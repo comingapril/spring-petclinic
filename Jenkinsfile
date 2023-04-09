@@ -16,4 +16,4 @@ pipeline {
                 jdk 'JDK_17_UBUNTU'
             }
         }
-       
+    }       

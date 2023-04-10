@@ -15,10 +15,9 @@ pipeline {
             steps {
                 rtServer (
                     id: "ARTIFACTORY_SERVER",
-                    url: 'https://september2023.jfrog.io',
+                    url: 'https://ontheway2023.jfrog.io',
                     credentialsId: 'JFROG_CLOUD_ADMIN'
                 )
-
                 rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
                     serverId: "ARTIFACTORY_SERVER",
@@ -40,7 +39,7 @@ pipeline {
             }
             steps {
                 rtMavenRun (
-                    tool: 'MAVEN_DEFAULT',
+                    tool: 'MAVEN_DEFAULT'
                     pom: 'pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER"

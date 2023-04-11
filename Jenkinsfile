@@ -15,7 +15,7 @@ pipeline {
             steps {
                 rtServer (
                     id: "ARTIFACTORY_SERVER",
-                    url: 'https://ontheway2023.jfrog.io',
+                    url: 'https://ontheway2023.jfrog.io/artifactory',
                     credentialsId: 'JFROG_CLOUD_ADMIN'
                 )
                 rtMavenDeployer (

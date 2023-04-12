@@ -39,10 +39,9 @@ pipeline {
             steps {
                  rtMavenRun (
                     tool: 'MAVEN_DEFAULT'
-                    pom: 'maven-examples/maven-example/pom.xml',
+                    pom: 'pom.xml',
                     goals: 'clean install',
-                    deployerId: "MAVEN_DEPLOYER",
-                    resolverId: "MAVEN_RESOLVER"
+                    deployerId: "MAVEN_DEPLOYER"
                 )
                   rtPublishBuildInfo (
                     serverId: "ARTIFACTORY_SERVER"

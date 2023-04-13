@@ -35,7 +35,15 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar',
                                  onlyIfSuccessful: true
                 junit testResults: '**/surefire-reports/TEST-*.xml'
+                stash name: 'spc-jar',
+                      includes: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar'
             }			
         }	
+        stage('ansibe') {
+            agent { label 'JDK_11_UBUNTU' }
+            steps {
+                unstash name: 'spc-jar'
+            }
+        }
     }
 }

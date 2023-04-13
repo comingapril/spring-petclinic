@@ -40,7 +40,7 @@ pipeline {
             }			
         }	
         stage('ansibe') {
-            agent { label 'JDK_11_UBUNTU' }
+            agent { label 'JDK_8' }
             steps {
                 unstash name: 'spc-jar'
             }
